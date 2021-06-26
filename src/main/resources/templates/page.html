@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Makr</title>
+</head>
+<body>
+<form action="/watermark" method="post" enctype="multipart/form-data">
+    <label for="pdfFile">File</label>
+    <input type="file" id="pdfFile" name="pdfFile" accept="application/pdf" required>
+
+    <label for="watermarkText">Watermark text</label>
+    <input type="text" id="watermarkText" name="watermarkText" required>
+
+    <label for="fontSize">Font size</label>
+    <input type="number" id="fontSize" name="fontSize" required>
+
+    <button type="submit">Upload</button>
+</form>
+</body>
+</html>
