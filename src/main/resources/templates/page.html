@@ -2,20 +2,102 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" rel="stylesheet">
     <title>Makr</title>
 </head>
 <body>
-<form action="/watermark" method="post" enctype="multipart/form-data">
-    <label for="pdfFile">File</label>
-    <input type="file" id="pdfFile" name="pdfFile" accept="application/pdf" required>
+<div class="container mt-3">
+    <div class="card">
+        <div class="card-body">
+            <h1 class="card-title">Watermark</h1>
+            <form action="/watermark" enctype="multipart/form-data" method="post">
+                <div class="mb-3">
+                    <label class="form-label" for="pdfFileForWatermark">File</label>
+                    <input accept="application/pdf" class="form-control" id="pdfFileForWatermark" name="pdfFile"
+                           required
+                           type="file">
+                </div>
 
-    <label for="watermarkText">Watermark text</label>
-    <input type="text" id="watermarkText" name="watermarkText" required>
+                <div class="mb-3">
+                    <label class="form-label" for="watermarkText">Watermark text</label>
+                    <input class="form-control" id="watermarkText" name="watermarkText" required type="text">
+                </div>
 
-    <label for="fontSize">Font size</label>
-    <input type="number" id="fontSize" name="fontSize" required>
+                <div class="mb-3">
+                    <label class="form-label" for="fontSize">Font size</label>
+                    <input class="form-control" id="fontSize" name="fontSize" required type="number">
+                </div>
 
-    <button type="submit">Upload</button>
-</form>
+                <button class="btn btn-primary" type="submit">Upload</button>
+            </form>
+        </div>
+    </div>
+
+    <br>
+
+    <div class="card">
+        <div class="card-body">
+            <h1 class="card-title">Merge</h1>
+            <form action="/merge" enctype="multipart/form-data" method="post">
+                <div class="mb-3">
+                    <label class="form-label" for="pdfFileForMerging">Files</label>
+                    <input accept="application/pdf" class="form-control" id="pdfFileForMerging" multiple name="pdfFiles"
+                           required type="file">
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label" for="fileNameForMerging">File name</label>
+                    <input class="form-control" id="fileNameForMerging" name="fileName" required
+                           type="text">
+                </div>
+
+                <button class="btn btn-primary" type="submit">Upload</button>
+            </form>
+        </div>
+    </div>
+
+    <br>
+
+    <div class="card">
+        <div class="card-body">
+            <h1 class="card-title">Merge and watermark</h1>
+            <form action="/mergeAndWatermark" enctype="multipart/form-data" method="post">
+                <div class="mb-3">
+                    <label class="form-label" for="pdfFilesForMergingAndWatermark">Files</label>
+                    <input accept="application/pdf" class="form-control" id="pdfFilesForMergingAndWatermark" multiple
+                           name="pdfFiles"
+                           required type="file">
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label" for="fileNameForMergingAndWatermark">File name</label>
+                    <input class="form-control" id="fileNameForMergingAndWatermark" name="fileName" required
+                           type="text">
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label" for="watermarkTextForMergeAndWatermark">Watermark text</label>
+                    <input class="form-control" id="watermarkTextForMergeAndWatermark" name="watermarkText" required
+                           type="text">
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label" for="fontSizeForMergingAndWatermark">Font size</label>
+                    <input class="form-control" id="fontSizeForMergingAndWatermark" name="fontSize" required
+                           type="number">
+                </div>
+
+                <button class="btn btn-primary" type="submit">Upload</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<script crossorigin="anonymous"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
