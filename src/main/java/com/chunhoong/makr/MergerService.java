@@ -21,8 +21,8 @@ public class MergerService {
         for (int i = 0; i < files.size(); i++) {
             File file = files.get(i);
             pdfDocuments.add(i == 0 ?
-                    new PdfDocument(new PdfReader(file), new PdfWriter(mergedFile)) :
-                    new PdfDocument(new PdfReader(file))
+                    new PdfDocument(new PdfReader(file).setUnethicalReading(true), new PdfWriter(mergedFile)) :
+                    new PdfDocument(new PdfReader(file).setUnethicalReading(true))
             );
         }
 

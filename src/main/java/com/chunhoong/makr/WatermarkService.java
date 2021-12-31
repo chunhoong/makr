@@ -24,7 +24,7 @@ public class WatermarkService {
 
     public File addWatermark(File pdf, String watermarkText, int fontSize) throws IOException {
         File output = File.createTempFile("output.", ".pdf");
-        PdfDocument pdfDocument = new PdfDocument(new PdfReader(pdf), new PdfWriter(output));
+        PdfDocument pdfDocument = new PdfDocument(new PdfReader(pdf).setUnethicalReading(true), new PdfWriter(output));
         Document document = new Document(pdfDocument);
         PdfFont font = PdfFontFactory.createFont(StandardFonts.HELVETICA);
         Paragraph paragraph = new Paragraph(watermarkText).setFont(font).setFontSize(fontSize);
